@@ -76,7 +76,7 @@
       </div>
 
       <div id="filters" class="button-group">
-        <button class="button" data-filter=".publication"><span class="english-text">Research</span></button>
+        <button class="button" id="researchButton" data-filter=".publication"><span class="english-text">Research</span></button>
         <button class="button" data-filter=".project"><span class="english-text">Projects</span></button>
         <button class="button" data-filter=".cv"><span class="english-text">CV</span></button>
       </div>
@@ -238,6 +238,12 @@
     </div>
 
     <script>
+
+      document.addEventListener("DOMContentLoaded", function() {
+          var button = document.getElementById("researchButton");
+          button.classList.add("active");
+          button.click();
+      });
 
       // Isotope grid.
       var $grid = $('.grid').isotope({
