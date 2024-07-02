@@ -31,6 +31,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+      .pdfContainer {
+          width: 1000px;
+          height: 600px;
+          border: none;
+      }
+      .errorMessage {
+          display: none;
+          color: red;
+          font-size: 20px;
+      }
+  </style>
   </head>
 
   <body id="body">
@@ -62,15 +75,6 @@
             <a href="https://scholar.google.com/citations?user=YHqAzxUAAAAJ&hl=zh-CN" style="color: #4185F4; font-size:17px"><i class="fa-brands fa-google-scholar"></i> Google Scholar</a>&nbsp;&nbsp;&nbsp;&nbsp;
             <i class="fa-solid fa-envelope" style="color: #9f9f9f;"></i> zhanghenryhai12138[at]gmail[dot]com
             
-            <!-- <button id="wechatButton">
-              <i class="fab fa-weixin"></i>  <span class="english-text">WeChat</span>
-            </button>
-            <div id="wechatModal">
-              <div class="modal-content">
-                  <span id="closeModal" style="cursor: pointer; float: right; font-size: 20px;">&times;</span>
-                  <img src="images/wechat.jpg" alt="WeChat Image" >
-              </div>
-            </div> -->
 
           <br><br>
           </p>
@@ -149,7 +153,17 @@
                 <font color="769fcd"> <i class="fa-solid fa-magnifying-glass"></i> TL;DR: 
                   We theoretically derive an optimization objective that can unify model shift and model bias and then formulate a fine-tuning process, 
                   adaptively adjusting model updates to get a performance improvement guarantee while avoiding model overfitting.
-                  <br> <a href="https://openreview.net/pdf?id=d7a5TpePV7">Paper</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a href="https://github.com/betray12138/Unified-Model-Shift-and-Model-Bias-Policy-Optimization">Code</a>
+                  <br> <a href="https://openreview.net/pdf?id=d7a5TpePV7">Paper</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a href="https://github.com/betray12138/Unified-Model-Shift-and-Model-Bias-Policy-Optimization">Code</a>&nbsp;&nbsp;&nbsp;&bull;&nbsp; 
+                  <button class="wechatButton">
+                  <a href="" class="noNavigateLink">Poster</a>
+                  <div class="wechatModal">
+                    <div class="modal-content">
+                        <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
+                        <iframe class="pdfContainer" src="files/USB_PO_Poster.pdf" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
+                    </div>
+                  </div>
+                  </button>
             </p>
           </div>
         </div>
@@ -161,11 +175,22 @@
             <p>
                 Xiao Zhang, <u>Hai Zhang</u>, Hongtu Zhou, Chang Huang, Di Zhang, Chen Ye†, Junqiao Zhao†
                 <br><i>IEEE Robotics and Automation Letters</i><br>
-              
+                <font color="49bf9"><i>&#9733; Oral Presentation in ICRA 2024 &#9733;</i></font><br>
                 <font color="769fcd"> <i class="fa-solid fa-magnifying-glass"></i> TL;DR: 
                   We propose a method to construct a boundary that discriminates between safe and unsafe states. 
                   The boundary we construct is equivalent to distinguishing dead-end states, indicating the maximum extent to which safe exploration is guaranteed, and thus has a minimum limitation on exploration.
-                  <br> <a href="https://ieeexplore.ieee.org/abstract/document/10319093">Paper</a>  &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a href="https://github.com/tiev-tongji/dea-rrl">Code</a>
+                  <br> <a href="https://ieeexplore.ieee.org/abstract/document/10319093">Paper</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a href="https://github.com/tiev-tongji/dea-rrl">Code</a>&nbsp;&nbsp;&nbsp;&bull;&nbsp; 
+                  <button class="wechatButton">
+                  <a href="" class="noNavigateLink">Poster</a>
+                  <div class="wechatModal">
+                    <div class="modal-content">
+                        <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;
+                          <iframe class="pdfContainer" src="files/saferl_icra_poster.pdf" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                          <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
+                        </span>
+                    </div>
+                  </div>
+                  </button>
             </p>
           </div>
         </div>
@@ -230,7 +255,8 @@
         </div>
 
         <div class="list-item cv description" data-category="cv">
-          <iframe src="files/cv.pdf" type="application/pdf" width="900" height="1170" style="border:none;"></iframe>
+          <iframe class="pdfContainer" src="files/cv.pdf" type="application/pdf" width="900" height="1170" style="border:none;"></iframe>
+          <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
         </div>
 
 
@@ -241,6 +267,47 @@
     </div>
 
     <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var links = document.querySelectorAll('a.noNavigateLink');
+        links.forEach(function(link) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();  
+            });
+        });
+      });
+
+      window.onload = function() {
+          var pdfContainers = document.getElementsByClassName('pdfContainer');
+          var errorMessages = document.getElementsByClassName('errorMessage');
+
+          // Ensure we have the same number of errorMessages as pdfContainers
+          if (pdfContainers.length !== errorMessages.length) {
+              console.error('The number of error messages does not match the number of PDF containers.');
+              return;
+          }
+
+          Array.prototype.forEach.call(pdfContainers, function(pdfContainer, index) {
+              var errorMessage = errorMessages[index];
+
+              pdfContainer.onload = function() {
+                  try {
+                      var doc = pdfContainer.contentDocument || pdfContainer.contentWindow.document;
+                      // Check for empty content or a specific error message
+                      if (doc.body.innerHTML.trim().length === 0) {
+                          throw new Error("Empty content");
+                      }
+                  } catch (error) {
+                      pdfContainer.style.display = 'none';
+                      errorMessage.style.display = 'block';
+                  }
+              };
+
+              pdfContainer.onerror = function() {
+                  pdfContainer.style.display = 'none';
+                  errorMessage.style.display = 'block';
+              };
+          });
+      };
 
       document.addEventListener("DOMContentLoaded", function() {
           var button = document.getElementById("researchButton");
@@ -358,12 +425,46 @@
 
       window.onload = adjustFooterMargin;
       window.onresize = adjustFooterMargin; 
-      document.getElementById('wechatButton').onclick = function() {
-        document.getElementById('wechatModal').classList.add('visible');
-      };
-      document.getElementById('closeModal').onclick = function() {
-          document.getElementById('wechatModal').classList.remove('visible');
-      };
+      document.querySelectorAll('.wechatButton').forEach(function(button) {
+          button.onclick = function(event) {
+              event.preventDefault(); // Prevent default button action
+
+              // Hide all currently visible modals
+              document.querySelectorAll('.wechatModal.visible').forEach(function(modal) {
+                  modal.classList.remove('visible');
+              });
+
+              // Find the .wechatModal within the clicked button
+              var modal = button.querySelector('.wechatModal');
+              if (modal) {
+                  modal.classList.add('visible');
+              }
+          };
+      });
+
+      document.querySelectorAll('.closeModal').forEach(function(button) {
+          button.onclick = function(event) {
+              // Stop the click event from bubbling up
+              event.stopPropagation();
+              
+              // Find the closest .wechatModal from the clicked .closeModal
+              var modal = button.closest('.modal-content').parentElement;
+              if (modal && modal.classList.contains('wechatModal')) {
+                  modal.classList.remove('visible');
+              }
+          };
+      });
+
+      // Optional: Close modal when clicking outside of modal content
+      document.querySelectorAll('.wechatModal').forEach(function(modal) {
+          modal.onclick = function(event) {
+              // Close the modal if the background is clicked, not the content
+              if (event.target === modal) {
+                  modal.classList.remove('visible');
+              }
+          };
+      });
+
 
 
     </script>

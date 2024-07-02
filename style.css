@@ -336,7 +336,7 @@ mark {
   box-decoration-break: clone;
 }
 
-#wechatModal {
+.wechatModal {
   position: fixed;
   left: 0;
   top: 0;
@@ -348,7 +348,7 @@ mark {
   align-items: center;
   z-index: 1000; 
 }
-#wechatButton {
+.wechatButton {
   border: none; 
   background: transparent; 
   color: #0ad267;
@@ -358,7 +358,7 @@ mark {
   font-family: "Baloo 2", sans-serif;
 }
 
-#wechatModal.visible {
+.wechatModal.visible {
   display: flex; 
 }
 
