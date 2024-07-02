@@ -22,15 +22,15 @@
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src="https://kit.fontawesome.com/1643bac768.js" crossorigin="anonymous"></script>
     <!-- Custom Style -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" target="_blank" href="style.css">
 
     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" target="_blank" href="https://fonts.googleapis.com">
+    <link rel="preconnect" target="_blank" href="https://fonts.gstatic.com" crossorigin>
+    <link target="_blank" href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link target="_blank" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link target="_blank" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
       .pdfContainer {
@@ -48,7 +48,14 @@
           display: block; /* Show the modal when visible class is added */
       }
 
-  </style>
+    </style>
+
+    <style id="initialHideStyle">
+        body {
+            visibility: hidden;
+        }
+    </style>
+
   </head>
 
   <body id="body">
@@ -61,23 +68,23 @@
         <div id="intro-text">
           <h1>  <b> Hai </b>  <b> Zhang </b> | <span class="chinese-text"> 张 海 </span></h1>
           <p>
-            Hi there! I'm currently a second-year graduate student at <a href="https://github.com/tiev-tongji">TIEV</a> lab, Tongji University, supervised by <a href="http://cs1.tongji.edu.cn/~junqiao/">Prof. Junqiao Zhao</a>. 
-            Before this, I got my bachelor degree at <a href="https://see.tongji.edu.cn/">Tongji University</a>, major in computer science and technology 
-            and had an exciting experience in <a href="https://www.nio.cn/">NIO</a> served for backend-development engineer.
+            Hi there! I'm currently a second-year graduate student at <a target="_blank" href="https://github.com/tiev-tongji">TIEV</a> lab, Tongji University, supervised by <a target="_blank" href="http://cs1.tongji.edu.cn/~junqiao/">Prof. Junqiao Zhao</a>. 
+            Before this, I got my bachelor degree at <a target="_blank" href="https://see.tongji.edu.cn/">Tongji University</a>, major in computer science and technology 
+            and had an exciting experience in <a target="_blank" href="https://www.nio.cn/">NIO</a> served for backend-development engineer.
             <br>
             My research interests lie in model-based reinforcement learning, offline meta reinforcement learning and embodied intelligent w.r.t robotic manipulation🤖.
             <br>
-            I'm lucky to work with <a href="https://lanqingli1993.github.io/">Prof. Lanqing Li</a> and <a href="https://www.cse.cuhk.edu.hk/~pheng/">Prof. Pheng Ann Heng</a> at the Chinese University of HongKong previously.
-            Now I'm working closely with <a href="https://people.iiis.tsinghua.edu.cn/~gaoyang/yang-gao.weebly.com/index.html">Prof. Yang Gao</a> at the Institute for Interdisciplinary Information Science at Tsinghua University to explore the generalization ability towards robotic manipulation.
+            I'm lucky to work with <a target="_blank" href="https://lanqingli1993.github.io/">Prof. Lanqing Li</a> and <a target="_blank" href="https://www.cse.cuhk.edu.hk/~pheng/">Prof. Pheng Ann Heng</a> at the Chinese University of HongKong previously.
+            Now I'm working closely with <a target="_blank" href="https://people.iiis.tsinghua.edu.cn/~gaoyang/yang-gao.weebly.com/index.html">Prof. Yang Gao</a> at the Institute for Interdisciplinary Information Science at Tsinghua University to explore the generalization ability towards robotic manipulation.
             <br>
             I'm open to collaborations on reinforcement learning / robotics related projects! Feel free to drop me👋. 
             <br>
             [Recent News] I'm pursuing PhD position in 25 Fall.
             <br> <br>
 
-            <a href="https://github.com/betray12138" style="color: #000000;"><i style="font-size:20px" class="fa">&#xf09b;</i> Github</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://www.zhihu.com/people/betray12138" style="color: #4185F4; font-size:17px"> <img src="images/icon_zhihu.png" alt="", width="3%" /> Zhi Hu</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="https://scholar.google.com/citations?user=YHqAzxUAAAAJ&hl=zh-CN" style="color: #4185F4; font-size:17px"><i class="fa-brands fa-google-scholar"></i> Google Scholar</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a target="_blank" href="https://github.com/betray12138" style="color: #000000;"><i style="font-size:20px" class="fa">&#xf09b;</i> Github</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a target="_blank" href="https://www.zhihu.com/people/betray12138" style="color: #4185F4; font-size:17px"> <img src="images/icon_zhihu.png" alt="", width="3%" /> Zhi Hu</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a target="_blank" href="https://scholar.google.com/citations?user=YHqAzxUAAAAJ&hl=zh-CN" style="color: #4185F4; font-size:17px"><i class="fa-brands fa-google-scholar"></i> Google Scholar</a>&nbsp;&nbsp;&nbsp;&nbsp;
             <i class="fa-solid fa-envelope" style="color: #9f9f9f;"></i> zhanghenryhai12138[at]gmail[dot]com
             
 
@@ -99,9 +106,9 @@
 
         <!-- Publications -->
         <div class="list-item publication" data-category="publication">
-          <a href="https://arxiv.org/abs/2405.12001" class="thumbnail"><img src="images/scrutinize.png" alt="" /></a>
+          <a target="_blank" href="https://arxiv.org/abs/2405.12001" class="thumbnail"><img src="images/scrutinize.png" alt="" /></a>
           <div class="project-description">
-            <h3><a href="https://arxiv.org/abs/2405.12001">Scrutinize What We Ignore: Reining Task Representation Shift In Context-Based Offline Meta Reinforcement Learning</a></h3>
+            <h3><a target="_blank" href="https://arxiv.org/abs/2405.12001">Scrutinize What We Ignore: Reining Task Representation Shift In Context-Based Offline Meta Reinforcement Learning</a></h3>
             <p>
                 <u>Hai Zhang</u>, Boyuan Zheng, Anqi Guo, Tianying Ji, Pheng-Ann Heng, Junqiao Zhao†, Lanqing Li†
                 <br><i>Under Review</i><br>
@@ -110,15 +117,15 @@
                   We unify the mutual information objective commonly used in COMRL with the general RL objective, filling the gap between intuition and theoretical justification. 
                   We theoretically demonstrate that by reining the previously ignored task representation shift, it is possible to achieve monotonic performance improvements.
                   We firstly propose classifier-based method into COMRL, achieving SOTA performance in asymptotic performance, training stability and training time cost as well as tuning-free property.
-                  <br> <a href="https://arxiv.org/abs/2405.12001">arXiv</a> 
+                  <br> <a target="_blank" href="https://arxiv.org/abs/2405.12001">arXiv</a> 
             </p>
           </div>
         </div>
 
         <div class="list-item publication" data-category="publication">
-          <a href="https://arxiv.org/abs/2402.02429" class="thumbnail"><img src="images/unicorn.png" alt="" /></a>
+          <a target="_blank" href="https://arxiv.org/abs/2402.02429" class="thumbnail"><img src="images/unicorn.png" alt="" /></a>
           <div class="project-description">
-            <h3><a href="https://arxiv.org/abs/2402.02429">Towards an Information Theoretic Framework of Context-Based Offline Meta-Reinforcement Learning</a></h3>
+            <h3><a target="_blank" href="https://arxiv.org/abs/2402.02429">Towards an Information Theoretic Framework of Context-Based Offline Meta-Reinforcement Learning</a></h3>
             <p>
                 Lanqing Li*, <u>Hai Zhang *</u>, Xinyu Zhang, Shatong Zhu, Junqiao Zhao†, Pheng-Ann Heng<br>
                 <br><i>Under Review</i><br>
@@ -127,15 +134,15 @@
                   TL;DR: We propose a novel information theoretic framework of the context-based offline meta-RL paradigm, 
                   which unifies several mainstream methods and leads to a general and state-of-the-art algorithm called UNICORN,
                   exhibiting remarkable generalization across a broad spectrum of RL benchmarks, context shift scenarios, data qualities and deep learning architectures. </font><br>
-                <a href="https://arxiv.org/abs/2402.02429">arXiv</a>
+                <a target="_blank" href="https://arxiv.org/abs/2402.02429">arXiv</a>
             </p>
           </div>
         </div>
 
         <div class="list-item publication" data-category="publication">
-          <a href="" class="thumbnail"><img src="images/SMG.png" alt="" /></a>
+          <a target="_blank" href="" class="thumbnail"><img src="images/SMG.png" alt="" /></a>
           <div class="project-description">
-            <h3><a href="">Focus On What Matters: Separated Models For Visual-Based RL Generalization</a></h3>
+            <h3><a target="_blank" href="">Focus On What Matters: Separated Models For Visual-Based RL Generalization</a></h3>
             <p>
               Di Zhang, Bowen Lv, <u>Hai Zhang</u>, Feifan Yang, Hongtu Zhou, Chang Huang, Hang Yu, Chen Ye, Junqiao Zhao, changjun jiang<br>
               <i>Under review </i><br>
@@ -143,16 +150,16 @@
                 TL;DR: We propose SMG, which utilizes a reconstruction-based auxiliary task to extract task-relevant representations from visual observations 
                 and further strengths the generalization ability of RL agents with the help of two consistency losses.
               </font>
-              <br><a href="">arXiv</a> 
+              <br><a target="_blank" href="">arXiv</a> 
             </p>
           </div>
         </div>
 
 
         <div class="list-item publication" data-category="publication">
-          <a href="https://openreview.net/pdf?id=d7a5TpePV7" class="thumbnail"><img src="images/usb-po.png" alt="" /></a>
+          <a target="_blank" href="https://openreview.net/pdf?id=d7a5TpePV7" class="thumbnail"><img src="images/usb-po.png" alt="" /></a>
           <div class="project-description">
-            <h3><a href="https://openreview.net/pdf?id=d7a5TpePV7">How to Fine-tune the Model: Unified Model Shift and Model Bias Policy Optimization</a></h3>
+            <h3><a target="_blank" href="https://openreview.net/pdf?id=d7a5TpePV7">How to Fine-tune the Model: Unified Model Shift and Model Bias Policy Optimization</a></h3>
             <p>
                 <u>Hai Zhang</u>, Hang Yu, Junqiao Zhao†, Di Zhang, Chang Huang, Hongtu Zhou, Xiao Zhang, Chen Ye
                 <br><i>NeurIPS 2023</i><br>
@@ -160,9 +167,9 @@
                 <font color="769fcd"> <i class="fa-solid fa-magnifying-glass"></i> TL;DR: 
                   We theoretically derive an optimization objective that can unify model shift and model bias and then formulate a fine-tuning process, 
                   adaptively adjusting model updates to get a performance improvement guarantee while avoiding model overfitting.
-                  <br> <a href="https://openreview.net/pdf?id=d7a5TpePV7">Paper</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a href="https://github.com/betray12138/Unified-Model-Shift-and-Model-Bias-Policy-Optimization">Code</a>&nbsp;&nbsp;&nbsp;&bull;&nbsp; 
+                  <br> <a target="_blank" href="https://openreview.net/pdf?id=d7a5TpePV7">Paper</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a target="_blank" href="https://github.com/betray12138/Unified-Model-Shift-and-Model-Bias-Policy-Optimization">Code</a>&nbsp;&nbsp;&nbsp;&bull;&nbsp; 
                   <button class="wechatButton">
-                  <a href="" class="noNavigateLink">Poster</a>
+                  <a target="_blank" href="" class="noNavigateLink">Poster</a>
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
@@ -176,9 +183,9 @@
         </div>
 
         <div class="list-item publication" data-category="publication">
-          <a href="https://ieeexplore.ieee.org/abstract/document/10319093" class="thumbnail"><img src="images/saferl.png" alt="" /></a>
+          <a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10319093" class="thumbnail"><img src="images/saferl.png" alt="" /></a>
           <div class="project-description">
-            <h3><a href="https://ieeexplore.ieee.org/abstract/document/10319093">Safe Reinforcement Learning with Dead-Ends Avoidance and Recovery</a></h3>
+            <h3><a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10319093">Safe Reinforcement Learning with Dead-Ends Avoidance and Recovery</a></h3>
             <p>
                 Xiao Zhang, <u>Hai Zhang</u>, Hongtu Zhou, Chang Huang, Di Zhang, Chen Ye†, Junqiao Zhao†
                 <br><i>IEEE Robotics and Automation Letters</i><br>
@@ -186,9 +193,9 @@
                 <font color="769fcd"> <i class="fa-solid fa-magnifying-glass"></i> TL;DR: 
                   We propose a method to construct a boundary that discriminates between safe and unsafe states. 
                   The boundary we construct is equivalent to distinguishing dead-end states, indicating the maximum extent to which safe exploration is guaranteed, and thus has a minimum limitation on exploration.
-                  <br> <a href="https://ieeexplore.ieee.org/abstract/document/10319093">Paper</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a href="https://github.com/tiev-tongji/dea-rrl">Code</a>&nbsp;&nbsp;&nbsp;&bull;&nbsp; 
+                  <br> <a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10319093">Paper</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a target="_blank" href="https://github.com/tiev-tongji/dea-rrl">Code</a>&nbsp;&nbsp;&nbsp;&bull;&nbsp; 
                   <button class="wechatButton">
-                  <a href="" class="noNavigateLink">Poster</a>
+                  <a target="_blank" href="" class="noNavigateLink">Poster</a>
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;
@@ -213,7 +220,7 @@
           <table width="100%" align="center" border="0" cellpadding="0">
             <tr>
               <td width="48%" align="center" valign="middle">
-                <a href= "https://www.bilibili.com/video/BV17T411F7tn/?spm_id_from=333.337.search-card.all.click&vd_source=ccb4d9359e2c421512d985edb4dda337"><img src="images/waic_result.jpeg" alt="prl" width="75%"> <br><br> </a>
+                <a target="_blank" href= "https://www.bilibili.com/video/BV17T411F7tn/?spm_id_from=333.337.search-card.all.click&vd_source=ccb4d9359e2c421512d985edb4dda337"><img src="images/waic_result.jpeg" alt="prl" width="75%"> <br><br> </a>
                 <p>
                   <font color="49bf9"><i> Runner-up in the WAIC: Meta-verse Lights Up Autonomous Driving, AI Simulation Driving Competition.</i></font><br>
                   An autonomous driving algorithm to achieve successfully running in simulated scenarios.</td>
@@ -281,7 +288,7 @@
 
       <br> <br> <br>
 
-      <div id="footer">Website template adapted from <a href="https://github.com/andyzeng/andyzeng.github.io">Andy Zeng</a> and <a href="https://jonbarron.info/">Jon Barron</a>.</div>
+      <div id="footer">Website template adapted from <a target="_blank" href="https://github.com/andyzeng/andyzeng.github.io">Andy Zeng</a> and <a target="_blank" href="https://jonbarron.info/">Jon Barron</a>.</div>
 
     </div>
 
@@ -484,9 +491,20 @@
           };
       });
 
-
+      window.addEventListener('load', function() {
+          // 移除隐藏样式
+          var hideStyle = document.getElementById('initialHideStyle');
+          if (hideStyle) {
+              hideStyle.parentNode.removeChild(hideStyle);
+          }
+          // 显示内容
+          document.body.style.visibility = 'visible';
+      });
 
     </script>
+
+
+    
   </body>
 </html>
 
