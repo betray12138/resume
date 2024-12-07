@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html>
   <head>
@@ -55,6 +54,51 @@
             visibility: hidden;
         }
     </style>
+
+    <style>
+
+      /* 轻飘飘 ACCEPT 效果 */
+      .accept-effect {
+        position: absolute;
+        font-size: 18px;
+        font-weight: bold;
+        color: rgb(234, 4, 12);
+        transform: translate(-50%, -50%);
+        animation: accept-animation 1s ease-out forwards;
+        pointer-events: none;
+        z-index: 1000;
+      }
+
+      @keyframes accept-animation {
+        0% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, -150%) scale(1.5);
+        }
+      }
+    </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+  
+  
+      // 点击轻飘飘 "ACCEPT" 效果
+      document.addEventListener("click", function (e) {
+        const acceptText = document.createElement("div");
+        acceptText.className = "accept-effect";
+        acceptText.innerText = "ACCEPT";
+        acceptText.style.left = `${e.pageX}px`;
+        acceptText.style.top = `${e.pageY}px`;
+        document.body.appendChild(acceptText);
+
+        // 动画结束后移除
+        setTimeout(() => acceptText.remove(), 1000);
+    });
+  });
+  </script>
 
   </head>
 
@@ -135,6 +179,17 @@
                   exhibiting remarkable generalization across a broad spectrum of RL benchmarks, context shift scenarios, data qualities and deep learning architectures. </font>
                   <!-- <br> <a target="_blank" href="https://openreview.net/pdf?id=QFUsZvw9mx">Paper</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a target="_blank" href="https://github.com/betray12138/UNICORN">Code</a>&nbsp;&nbsp;&nbsp;&bull;&nbsp;  -->
                   <br> <a target="_blank" href="https://openreview.net/pdf?id=QFUsZvw9mx">Paper</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a target="_blank" href="https://github.com/betray12138/UNICORN">Code</a>
+                  &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                  <button class="wechatButton">
+                  <a target="_blank" href="" class="noNavigateLink">Poster</a>
+                  <div class="wechatModal">
+                    <div class="modal-content">
+                        <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
+                        <iframe class="pdfContainer" src="files/unicorn_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
+                    </div>
+                  </div>
+                  </button>
             </p>
           </div>
         </div>
@@ -151,6 +206,17 @@
                 and further strengths the generalization ability of RL agents with the help of two consistency losses.
               </font>
               <br> <a target="_blank" href="https://openreview.net/pdf?id=wz2KvvEk44">Paper</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a target="_blank" href="https://anonymous.4open.science/r/SMG/">Code</a>
+              &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                  <button class="wechatButton">
+                  <a target="_blank" href="" class="noNavigateLink">Poster</a>
+                  <div class="wechatModal">
+                    <div class="modal-content">
+                        <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
+                        <iframe class="pdfContainer" src="files/SMG_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
+                    </div>
+                  </div>
+                  </button>
             </p>
           </div>
         </div>
@@ -168,7 +234,8 @@
                   We theoretically derive an optimization objective that can unify model shift and model bias and then formulate a fine-tuning process, 
                   adaptively adjusting model updates to get a performance improvement guarantee while avoiding model overfitting.
                   <br> <a target="_blank" href="https://openreview.net/pdf?id=d7a5TpePV7">Paper</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a target="_blank" href="https://github.com/betray12138/Unified-Model-Shift-and-Model-Bias-Policy-Optimization">Code</a>
-                  <!-- <button class="wechatButton">
+                  &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                  <button class="wechatButton">
                   <a target="_blank" href="" class="noNavigateLink">Poster</a>
                   <div class="wechatModal">
                     <div class="modal-content">
@@ -177,7 +244,7 @@
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
-                  </button> -->
+                  </button>
             </p>
           </div>
         </div>
@@ -194,7 +261,8 @@
                   We propose a method to construct a boundary that discriminates between safe and unsafe states. 
                   The boundary we construct is equivalent to distinguishing dead-end states, indicating the maximum extent to which safe exploration is guaranteed, and thus has a minimum limitation on exploration.
                   <br> <a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10319093">Paper</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a target="_blank" href="https://github.com/tiev-tongji/dea-rrl">Code</a>
-                  <!-- <button class="wechatButton">
+                  &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                  <button class="wechatButton">
                   <a target="_blank" href="" class="noNavigateLink">Poster</a>
                   <div class="wechatModal">
                     <div class="modal-content">
@@ -204,7 +272,7 @@
                         </span>
                     </div>
                   </div>
-                  </button> -->
+                  </button>
             </p>
           </div>
         </div>
@@ -507,4 +575,3 @@
     
   </body>
 </html>
-
