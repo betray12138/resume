@@ -15,49 +15,36 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1000">
 
-    <!-- Isotope JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    <script src="https://kit.fontawesome.com/1643bac768.js" crossorigin="anonymous"></script>
+    <!-- Preload resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" as="script">
+    <link rel="preload" href="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js" as="script">
+
     <!-- Custom Style -->
-    <link rel="stylesheet" target="_blank" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
     <!-- Google Font -->
-    <link rel="preconnect" target="_blank" href="https://fonts.googleapis.com">
-    <link rel="preconnect" target="_blank" href="https://fonts.gstatic.com" crossorigin>
-    <link target="_blank" href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link target="_blank" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link target="_blank" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" target="_blank" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Noto+Serif+SC:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
+      body {
+        visibility: hidden;
+      }
       .pdfContainer {
-          width: 1000px;
-          height: 600px;
-          border: none;
+        width: 1000px;
+        height: 600px;
+        border: none;
       }
       .errorMessage {
-          display: none;
-          color: red;
-          font-size: 20px;
+        display: none;
+        color: red;
+        font-size: 20px;
       }
-
       .wechatModal.visible {
-          display: block; /* Show the modal when visible class is added */
+        display: block;
       }
-
-    </style>
-
-    <style id="initialHideStyle">
-        body {
-            visibility: hidden;
-        }
-    </style>
-
-    <style>
-
-      /* 轻飘飘 ACCEPT 效果 */
       .accept-effect {
         position: absolute;
         font-size: 18px;
@@ -68,46 +55,32 @@
         pointer-events: none;
         z-index: 1000;
       }
-
       @keyframes accept-animation {
         0% {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
         }
         100% {
-            opacity: 0;
-            transform: translate(-50%, -150%) scale(1.5);
+          opacity: 0;
+          transform: translate(-50%, -150%) scale(1.5);
         }
       }
+      /* Ensure only filtered items are visible */
+      .grid .list-item {
+        display: none;
+      }
+      .grid .list-item.isotope-item {
+        display: block;
+      }
     </style>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-  
-  
-      // 点击轻飘飘 "ACCEPT" 效果
-      document.addEventListener("click", function (e) {
-        const acceptText = document.createElement("div");
-        acceptText.className = "accept-effect";
-        acceptText.innerText = "ACCEPT";
-        acceptText.style.left = `${e.pageX}px`;
-        acceptText.style.top = `${e.pageY}px`;
-        document.body.appendChild(acceptText);
-
-        // 动画结束后移除
-        setTimeout(() => acceptText.remove(), 1000);
-    });
-  });
-  </script>
-
   </head>
 
   <body id="body">
-
     <div id="main">
+      <!-- Intro section remains the same -->
       <div id="intro">
         <div id="intro-image">
-          <img src="images/profile.jpg">
+          <img src="https://ik.imagekit.io/xxyvnpkee/profile.jpg?updatedAt=1755411235077">
         </div>
         <div id="intro-text">
           <h1>  <b> Hai </b>  <b> Zhang </b> | <span class="chinese-text"> 张 海 </span></h1>
@@ -126,10 +99,10 @@
             I'm always open to collaborations on reinforcement learning / robotics-related projects! Feel free to reach out —— I'd love to connect!👋. 
             <br><br>
 
-            <a target="_blank" href="https://github.com/betray12138" style="color: #000000;"><i style="font-size:20px" class="fa">&#xf09b;</i> Github</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a target="_blank" href="https://www.zhihu.com/people/betray12138" style="color: #4185F4; font-size:17px"> <img src="images/icon_zhihu.png" alt="", width="3%" /> Zhi Hu</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a target="_blank" href="https://github.com/betray12138" style="color: #000000;"><i style="font-size:20px" class="fab">&#xf09b;</i> Github</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a target="_blank" href="https://www.zhihu.com/people/betray12138" style="color: #4185F4; font-size:17px"> <img src="https://ik.imagekit.io/xxyvnpkee/icon_zhihu.png?updatedAt=1755411231218" alt="", width="3%" /> Zhi Hu</a>&nbsp;&nbsp;&nbsp;&nbsp;
             <a target="_blank" href="https://scholar.google.com/citations?user=YHqAzxUAAAAJ&hl=zh-CN" style="color: #4185F4; font-size:17px"><i class="fa-brands fa-google-scholar"></i> Google Scholar</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <i class="fa-solid fa-envelope" style="color: #9f9f9f;"></i> hai.zhang@connect.hku.hk
+            <a href="mailto:hai.zhang@connect.hku.hk" style="color: #070707e7; text-decoration: none;"><i class="fa-solid fa-envelope" style="color: #9f9f9f;"></i> hai.zhang@connect.hku.hk </a>
             
 
           <br><br>
@@ -139,19 +112,20 @@
       </div>
 
       <div id="filters" class="button-group">
-        <button class="button" id="experienceButton" data-filter=".experience"><span class="english-text">Experience</span></button>
-        <button class="button" id="researchButton" data-filter=".publication"><span class="english-text">Publications</span></button>
-        <button class="button" data-filter=".project"><span class="english-text">Projects</span></button>
-        <button class="button" data-filter=".cv"><span class="english-text">CV</span></button>
+        <button class="button is-checked" id="experienceButton" data-filter=".experience"><span>Experience</span></button>
+        <!-- <button class="button" id="talkButton" data-filter=".talk"><span>Talks</span></button> -->
+        <button class="button" id="researchButton" data-filter=".publication"><span>Publications</span></button>
+        <button class="button" data-filter=".project"><span>Projects</span></button>
+        <button class="button" data-filter=".cv"><span>CV</span></button>
       </div>
 
-      <!-- Experience -->
       <div class="grid">
-        <div class="list-item experience description" data-category="experience">
+        <!-- Experience -->
+        <div class="list-item experience" data-category="experience">
           <p>
-            <img src="images/iiis.png" 
+            <img src="https://ik.imagekit.io/xxyvnpkee/iiis.png?updatedAt=1755411231874" 
               style="float: right; margin-right: 20px; ; width: 280px; height: 120px;">
-            <img src="images/qizhi.png" 
+            <img src="https://ik.imagekit.io/xxyvnpkee/qizhi.png?updatedAt=1755411235433" 
               style="float: right; margin-right: 30px; margin-top: 30px ; width: 240px; height: 60px;">
           </p>
           <ul style="margin:0 0 20px;list-style-type:none;">
@@ -171,9 +145,9 @@
           <div style="height: 80px;"></div>
           
           <p>
-            <img src="images/cuhk.png" 
+            <img src="https://ik.imagekit.io/xxyvnpkee/cuhk.png?updatedAt=1755411231262" 
               style="float: right; margin-right: 20px; ; width: 300px; height: 60px;">
-            <img src="images/zhejianglab.png" 
+            <img src="https://ik.imagekit.io/xxyvnpkee/zhejianglab.png?updatedAt=1755411239142" 
               style="float: right; margin-right: 40px; ; width: 140px; height: 60px;">
           </p>
           <ul style="margin:0 0 20px;list-style-type:none;">
@@ -192,16 +166,63 @@
           
         </div>
 
-
+        <!-- Talks -->
+        <!-- <div class="list-item talk" data-category="talk">
+          <p>
+            <img src="https://ik.imagekit.io/xxyvnpkee/cohere_lab.png?updatedAt=1755411231136" 
+              style="float: right; margin-right: 20px; ; width: 360px; height: 96px;">
+          </p>
+          <ul style="margin:0 0 20px;list-style-type:none;">
+            <li>
+              <autocolor>Invited Guest Speaker @ <a target="_blank" href="https://cohere.com/research">Cohere Labs Community</a> </autocolor>
+            </li>
+            <div style="height: 20px;"></div>
+            <li>
+              <autocolor>Topic: <a target="_blank" href=""> Why offline meta reinforcement learning ? </a></autocolor>
+            </li>
+          </ul>     
+          
+        </div> -->
 
         <!-- Publications -->
         <div class="list-item publication" data-category="publication">
-          <a target="_blank" href="https://dinomini00.github.io/KineDex/" class="thumbnail"><img src="images/kinedex.png" alt="" /></a>
+          <a target="_blank" href="" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/astro.png?updatedAt=1755415475329" alt="" /></a>
+          <div class="project-description">
+            <h3><a target="_blank" href="">ASTRO: Adaptive Stitching via Dynamics-Guided Trajectory Rollouts</a></h3>
+            <p>
+                Hang Yu, Di Zhang, Qiwei Du, Yanping Zhao, <u>Hai Zhang</u>, Guang Chen, Junqiao Zhao†, Eduardo E. Veas†
+                <br><i>Under Review</i><br>
+              
+                <font color="769fcd"> <i class="fa-solid fa-magnifying-glass"></i> TL;DR: 
+                  We propose ASTRO, a data augmentation framework that generates distributionally novel and dynamics-consistent trajectories for offline RL. 
+                  ASTRO first learns a temporal-distance representation to identify distinct and dynamically plausible stitch targets. 
+                  We then employ a dynamics-guided diffusion stitch planner via extrapolation discrepancies, defined as the gap between predicted and actual observations, 
+                  to adaptively stitch trajectories through model-based rollouts.
+                  
+                  <br> <a target="_blank" href="">Paper</a> &nbsp;&nbsp;&bull;&nbsp;&nbsp; <a target="_blank" href="">Code</a>
+                  <!-- &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                  <button class="wechatButton">
+                  <a target="_blank" href="" class="noNavigateLink">Poster</a>
+                  <div class="wechatModal">
+                    <div class="modal-content">
+                        <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
+                        <iframe class="pdfContainer" src="files/RETRO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
+                    </div>
+                  </div>
+                  </button>
+                  &nbsp;&nbsp;&bull;&nbsp;&nbsp;<a target="_blank" href="">Website</a> -->
+            </p>
+          </div>
+        </div>
+        
+        <div class="list-item publication" data-category="publication">
+          <a target="_blank" href="https://dinomini00.github.io/KineDex/" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/kinedex.png?updatedAt=1755411231247" alt="" /></a>
           <div class="project-description">
             <h3><a target="_blank" href="https://dinomini00.github.io/KineDex/">KineDex: Learning Tactile-Informed Visuomotor Policies via Kinesthetic Teaching for Dexterous Manipulation</a></h3>
             <p>
                 Di Zhang, Chengbo Yuan, Chuan Wen, <u>Hai Zhang</u>, Junqiao Zhao, Yang Gao†
-                <br><i>Under Review</i><br>
+                <font color="49bf9"><br><i>Conference on Robot Learning (CORL) 2025</i><br> </font>
               
                 <font color="769fcd"> <i class="fa-solid fa-magnifying-glass"></i> TL;DR: 
                   We propose KineDex, a hand-over-hand kinesthetic teaching paradigm in which the operator's motion is directly transferred to the dexterous hand, 
@@ -225,9 +246,8 @@
             </p>
           </div>
         </div>
-
         <div class="list-item publication" data-category="publication">
-          <a target="_blank" href="" class="thumbnail"><img src="images/certain.png" alt="" /></a>
+          <a target="_blank" href="" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/certain.png?updatedAt=1755411231355" alt="" /></a>
           <div class="project-description">
             <h3><a target="_blank" href="">CERTAIN: Context Uncertainty-aware One-Shot Adaptation for Context-based Offline Meta Reinforcement Learning</a></h3>
             <p>
@@ -253,9 +273,8 @@
             </p>
           </div>
         </div>
-
         <div class="list-item publication" data-category="publication">
-          <a target="_blank" href="https://openreview.net/forum?id=Cr1XlGBGVm" class="thumbnail"><img src="images/scrutinize.png" alt="" /></a>
+          <a target="_blank" href="https://openreview.net/forum?id=Cr1XlGBGVm" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/scrutinize.png?updatedAt=1755411235483" alt="" /></a>
           <div class="project-description">
             <h3><a target="_blank" href="https://openreview.net/forum?id=Cr1XlGBGVm">Scrutinize What We Ignore: Reining In Task Representation Shift Of Context-Based Offline Meta Reinforcement Learning</a></h3>
             <p>
@@ -273,7 +292,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="files/RETRO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" src="https://ik.imagekit.io/xxyvnpkee/RETRO_Poster.pdf?updatedAt=1755411081697#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -281,9 +300,8 @@
             </p>
           </div>
         </div>
-
         <div class="list-item publication" data-category="publication">
-          <a target="_blank" href="https://neurips.cc/virtual/2024/poster/95247" class="thumbnail"><img src="images/unicorn.png" alt="" /></a>
+          <a target="_blank" href="https://neurips.cc/virtual/2024/poster/95247" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/unicorn.png?updatedAt=1755411236165" alt="" /></a>
           <div class="project-description">
             <h3><a target="_blank" href="https://neurips.cc/virtual/2024/poster/95247">Towards an Information Theoretic Framework of Context-Based Offline Meta-Reinforcement Learning</a></h3>
             <p>
@@ -302,7 +320,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="files/unicorn_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" src="https://ik.imagekit.io/xxyvnpkee/USB_PO_Poster.pdf?updatedAt=1755411081171#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -311,9 +329,8 @@
             </p>
           </div>
         </div>
-
         <div class="list-item publication" data-category="publication">
-          <a target="_blank" href="" class="thumbnail"><img src="images/SMG.png" alt="" /></a>
+          <a target="_blank" href="" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/SMG.png?updatedAt=1755411236287" alt="" /></a>
           <div class="project-description">
             <h3><a target="_blank" href="https://openreview.net/pdf?id=wz2KvvEk44">Focus On What Matters: Separated Models For Visual-Based RL Generalization</a></h3>
             <p>
@@ -330,7 +347,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="files/SMG_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" src="https://ik.imagekit.io/xxyvnpkee/SMG_Poster.pdf?updatedAt=1755411079318#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -338,10 +355,8 @@
             </p>
           </div>
         </div>
-
-
         <div class="list-item publication" data-category="publication">
-          <a target="_blank" href="https://openreview.net/pdf?id=d7a5TpePV7" class="thumbnail"><img src="images/usb-po.png" alt="" /></a>
+          <a target="_blank" href="https://openreview.net/pdf?id=d7a5TpePV7" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/usb-po.png?updatedAt=1755411236242" alt="" /></a>
           <div class="project-description">
             <h3><a target="_blank" href="https://openreview.net/pdf?id=d7a5TpePV7">How to Fine-tune the Model: Unified Model Shift and Model Bias Policy Optimization</a></h3>
             <p>
@@ -358,7 +373,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="files/USB_PO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" src="https://ik.imagekit.io/xxyvnpkee/USB_PO_Poster.pdf?updatedAt=1755411081171#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -366,9 +381,8 @@
             </p>
           </div>
         </div>
-
         <div class="list-item publication" data-category="publication">
-          <a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10319093" class="thumbnail"><img src="images/saferl.png" alt="" /></a>
+          <a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10319093" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/saferl.png?updatedAt=1755411235443" alt="" /></a>
           <div class="project-description">
             <h3><a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10319093">Safe Reinforcement Learning with Dead-Ends Avoidance and Recovery</a></h3>
             <p>
@@ -385,7 +399,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;
-                          <iframe class="pdfContainer" src="files/saferl_icra_poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                          <iframe class="pdfContainer" src="https://ik.imagekit.io/xxyvnpkee/saferl_icra_poster.pdf?updatedAt=1755411078137#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                           <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                         </span>
                     </div>
@@ -395,25 +409,24 @@
           </div>
         </div>
 
-        <!-- side projects  -->
-        <div class="list-item project description" data-category="project">
+        <!-- Projects -->
+        <div class="list-item project" data-category="project">
           <h3>
             Some of the competitions and projects.
           </h3>
         </div>
-
         <div class="list-item project" data-category="project">
           <table width="100%" align="center" border="0" cellpadding="0">
             <tr>
               <td width="48%" align="center" valign="middle">
-                <a target="_blank" href= "https://www.bilibili.com/video/BV17T411F7tn/?spm_id_from=333.337.search-card.all.click&vd_source=ccb4d9359e2c421512d985edb4dda337"><img src="images/waic_result.jpeg" alt="prl" width="75%"> <br><br> </a>
+                <a target="_blank" href= "https://www.bilibili.com/video/BV17T411F7tn/?spm_id_from=333.337.search-card.all.click&vd_source=ccb4d9359e2c421512d985edb4dda337"><img src="https://ik.imagekit.io/xxyvnpkee/waic_result.jpeg?updatedAt=1755411239203" alt="prl" width="75%"> <br><br> </a>
                 <p>
                   <font color="49bf9"><i> Runner-up in the WAIC: Meta-verse Lights Up Autonomous Driving, AI Simulation Driving Competition.</i></font><br>
                   An autonomous driving algorithm to achieve successfully running in simulated scenarios.</td>
                 </p>
               </td>
               <td width="52%" align="center" valign="middle">
-                <img src="images/curling.png" alt="prl" width="48%" valign="middle"><br><br>
+                <img src="https://ik.imagekit.io/xxyvnpkee/curling.png?updatedAt=1755411231343" alt="prl" width="48%" valign="middle"><br><br>
                 <p>
                   <font color="49bf9"><i> Sixth Place in the RLChina AI Challenge - Ren Yin Spring Season <br> Curling Competition</i></font><br>
                   Fine-tune the PPO agent and combine it with the rule-based agent to tackle POMDP curling striking. </td>
@@ -425,8 +438,8 @@
           <table width="100%" align="center" border="0" cellpadding="0">
             <tr>
               <td width="38%" align="center" valign="middle">
-                <img src="images/shangchuang.png" alt="prl" width="80%"><br>
-                <img src="images/mapping.png" alt="prl" width="80%"><br><br>
+                <img src="https://ik.imagekit.io/xxyvnpkee/shangchuang.png?updatedAt=1755411235653" alt="prl" width="80%"><br>
+                <img src="https://ik.imagekit.io/xxyvnpkee/mapping.png?updatedAt=1755411232158" alt="prl" width="80%"><br><br>
                 <p>
                   <font color="49bf9"><i> Unknown Environment Exploration and Application Device Based on DRL <br>
                     Innovation and Entrepreneurship Program </i></font><br>
@@ -434,8 +447,8 @@
                 </p>
               </td>
               <td width="30%" align="center" valign="middle">
-                <img src="images/intel_device.png" alt="prl" width="100%"><br><br>
-                <img src="images/intel_system.png" alt="prl" width="100%"><br><br>
+                <img src="https://ik.imagekit.io/xxyvnpkee/intel_device.png?updatedAt=1755411232176" alt="prl" width="100%"><br><br>
+                <img src="https://ik.imagekit.io/xxyvnpkee/intel_system.png?updatedAt=1755411232026" alt="prl" width="100%"><br><br>
                 <p>
                   <font color="49bf9"><i> National Second Prize in <br> Intel Cup National College Students Embedded System Invitation Competition </i></font><br>
                   All Sight Security Eye - Intelligent Suspect Detection System. </td>
@@ -443,7 +456,7 @@
               </td>
               <td width="2%"></td>
               <td width="30%" align="center" valign="middle">
-                <img src="images/patent.png" alt="prl" width="100%"><br><br>
+                <img src="https://ik.imagekit.io/xxyvnpkee/patent.png?updatedAt=1755411234675" alt="prl" width="100%"><br><br>
                 <p>
                   <font color="49bf9"><i> Invention Patent in submitted: Distributed Vehicle Cloudization</i></font><br>
                   Use common software engineering technique concerning distributed system and k8s to achieve a cloudization system for autonomous vehicle. </td>
@@ -454,250 +467,143 @@
           <br>
         </div>
 
-
-        
-
-        <div class="list-item cv description" data-category="cv">
-          <iframe class="pdfContainer" src="files/cv.pdf#toolbar=0" type="application/pdf" width="900" height="1170" style="border:none;"></iframe>
+        <!-- CV -->
+        <div class="list-item cv" data-category="cv">
+          <iframe class="pdfContainer" src="https://ik.imagekit.io/xxyvnpkee/cv.pdf?updatedAt=1755414987169#toolbar=0" width="900" height="1170" style="border:none;"></iframe>
           <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
         </div>
 
-        
-
-      </div>
- 
-
-      <div>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr onmouseout="blocknerf_stop()" onmouseover="blocknerf_start()">
-            <td style="padding:10px;width:40%;max-width:40%;vertical-align:middle">          
-              <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=300&t=tt&d=b1MWjssroQuI7Qnl_jHFfFyN6qvBv7ok5qMlXjfuM24'></script>
-            </td>
-          </tr>
-        </tbody></table>
       </div>
 
-      <br> <br> <br>
-
-      <div id="footer">Website template adapted from <a target="_blank" href="https://github.com/andyzeng/andyzeng.github.io">Andy Zeng</a> and <a target="_blank" href="https://jonbarron.info/">Jon Barron</a>.</div>
-
+      <!-- Footer and other elements -->
+      <div id="footer">Website template adapted from <a href="https://github.com/andyzeng/andyzeng.github.io">Andy Zeng</a> and <a href="https://jonbarron.info/">Jon Barron</a>.</div>
     </div>
 
+    <!-- JavaScript at the bottom -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="https://kit.fontawesome.com/1643bac768.js" crossorigin="anonymous"></script>
+
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var links = document.querySelectorAll('a.noNavigateLink');
-        links.forEach(function(link) {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();  
-            });
-        });
-      });
-
-      window.onload = function() {
-          var pdfContainers = document.getElementsByClassName('pdfContainer');
-          var errorMessages = document.getElementsByClassName('errorMessage');
-
-          // Ensure we have the same number of errorMessages as pdfContainers
-          if (pdfContainers.length !== errorMessages.length) {
-              console.error('The number of error messages does not match the number of PDF containers.');
-              return;
-          }
-
-          Array.prototype.forEach.call(pdfContainers, function(pdfContainer, index) {
-              var errorMessage = errorMessages[index];
-
-              pdfContainer.onload = function() {
-                  try {
-                      var doc = pdfContainer.contentDocument || pdfContainer.contentWindow.document;
-                      // Check for empty content or a specific error message
-                      if (doc.body.innerHTML.trim().length === 0) {
-                          throw new Error("Empty content");
-                      }
-                  } catch (error) {
-                      pdfContainer.style.display = 'none';
-                      errorMessage.style.display = 'block';
-                  }
-              };
-
-              pdfContainer.onerror = function() {
-                  pdfContainer.style.display = 'none';
-                  errorMessage.style.display = 'block';
-              };
-          });
-      };
-      // set initial active button
       document.addEventListener("DOMContentLoaded", function() {
-          var button = document.getElementById("experienceButton");
-          button.classList.add("active");
-          button.click();
-      });
+              // 1. 立即显示页面内容
+        document.body.style.visibility = 'visible';
+        document.body.style.opacity = '1';
+        document.getElementById('main').style.display = 'block';
 
-      // Isotope grid.
-      var $grid = $('.grid').isotope({
-        itemSelector: '.list-item',
-        layoutMode: 'fitRows',
-        transitionDuration: 0,
-        stagger: 10,
-        initLayout: false,
-        getSortData: {
-          name: '.name',
-          symbol: '.symbol',
-          number: '.number parseInt',
-          category: '[data-category]',
-          weight: function( itemElem ) {
-            var weight = $( itemElem ).find('.weight').text();
-            return parseFloat( weight.replace( /[\(\)]/g, '') );
-          }
-        }
-      });
+        // 2. 初始化Isotope
+        const initIsotope = () => {
+          // 先确保所有项目可见（供Isotope测量布局）
+          $('.list-item').css('display', 'block');
+          
+          const $grid = $('.grid').isotope({
+            itemSelector: '.list-item',
+            layoutMode: 'fitRows',
+            filter: '.experience', // 默认显示Experience
+            initLayout: true,
+            hiddenStyle: { opacity: 0, display: 'none' },  // 明确设置隐藏样式
+            visibleStyle: { opacity: 1, display: 'block' }  // 明确设置显示样式
+          });
 
-      // Bind filter button click.
-      $('#filters').on( 'click', 'button', function() {
-        var filterValue = $( this ).attr('data-filter');
-        localStorage.setItem('filterValue', filterValue);
-        $grid.isotope({ filter: filterValue });
-      });
+          // 3. 绑定过滤按钮
+          $('#filters').on('click', 'button', function() {
+            const filterValue = $(this).attr('data-filter');
+            $grid.isotope({ filter: filterValue });
+            
+            // 更新按钮状态
+            $('.button-group .button').removeClass('is-checked');
+            $(this).addClass('is-checked');
+          });
 
-      // Change is-checked class on buttons.
-      $('.button-group').each( function( i, buttonGroup ) {
-        var $buttonGroup = $( buttonGroup );
-        $buttonGroup.on( 'click', 'button', function() {
-          $buttonGroup.find('.is-checked').removeClass('is-checked');
-          $( this ).addClass('is-checked');
-        });
-      });
+          return $grid;
+        };
 
-      function update_isotope() {
-        // Retrieve cached button click.
-        var defaultFilterValue = localStorage.getItem('filterValue');
-        if (defaultFilterValue == null) {
-          defaultFilterValue = ".highlight"
-        }
-        $grid.isotope({ filter: defaultFilterValue });
-        var buttons = document.getElementsByClassName("button");
-        for (var currButton of buttons) {
-          if (currButton.getAttribute('data-filter') == defaultFilterValue) {
-            currButton.classList.add('is-checked');
+        // 5. 确保依赖加载
+        const initApp = () => {
+          if (window.jQuery && window.Isotope) {
+            const $grid = initIsotope();
+            
+            // 初始显示Experience
+            $grid.isotope({ filter: '.experience' });
+            $('#experienceButton').addClass('is-checked');
+
+            // 初始化其他功能
+            initOtherFeatures($grid);
           } else {
-            currButton.classList.remove('is-checked');
+            setTimeout(initApp, 100);
           }
-        }
-      }
+        };
 
-      function toggle_bio() {
-        var x = document.getElementById("more-bio");
-        if (x.style.display === "none") {
-          x.style.display = "block";
-        } else {
-          x.style.display = "none";
-        }
-      }
-
-      function toggle_highlights() {
-        var x = document.getElementById("main-highlights");
-        var y = document.getElementById("more-highlights");
-        var b = document.getElementById("toggle_highlights_button")
-        if (y.style.display === "none") {
-          x.style.display = "none";
-          y.style.display = "block";
-          b.innerHTML = "Show less"
-          update_isotope();
-        } else {
-          x.style.display = "block";
-          y.style.display = "none";
-          b.innerHTML = "Show more"
-          update_isotope();
-        }
-      }
-
-      update_isotope();
-
-      document.addEventListener('DOMContentLoaded', function() {
-      var queryString = window.location.search;
-      var urlParams = new URLSearchParams(queryString);
-      var section = urlParams.get('section'); 
-      if(section) {
-        var button = document.querySelector(`button[data-filter='.${section}']`);
-        if(button) {
-          button.click();
-        }
-      }
-      });
-      function adjustFooterMargin() {
-        var footer = document.getElementById('footer');
-        var footerHeight = footer.offsetHeight;
-        var publications = document.querySelector('.publication');
-        var projects = document.querySelector('.project');
-        var cv = document.querySelector('.cv');
-        var experience = document.querySelector('.experience');
-        var maxHeight = Math.max(
-          publications ? publications.offsetHeight : 0,
-          projects ? projects.offsetHeight : 0,
-          cv ? cv.offsetHeight : 0,
-          experience ? experience.offsetHeight : 0
-        );
-        var marginBottom = footerHeight + 'px';
-        if (publications) publications.style.marginBottom = marginBottom;
-        if (projects) projects.style.marginBottom = marginBottom;
-        if (cv) cv.style.marginBottom = marginBottom;
-        if (experience) experience.style.marginBottom = marginBottom;
-      }
-
-      window.onload = adjustFooterMargin;
-      window.onresize = adjustFooterMargin; 
-      document.querySelectorAll('.wechatButton').forEach(function(button) {
-          button.onclick = function(event) {
-              event.preventDefault(); // Prevent default button action
-
-              // Hide all currently visible modals
-              document.querySelectorAll('.wechatModal.visible').forEach(function(modal) {
-                  modal.classList.remove('visible');
-              });
-
-              // Find the .wechatModal within the clicked button
-              var modal = button.querySelector('.wechatModal');
-              if (modal) {
-                  modal.classList.add('visible');
-              }
-          };
-      });
-
-      document.querySelectorAll('.closeModal').forEach(function(button) {
-          button.onclick = function(event) {
-              // Stop the click event from bubbling up
-              event.stopPropagation();
-              
-              // Find the closest .wechatModal from the clicked .closeModal
-              var modal = button.closest('.modal-content').parentElement;
-              if (modal && modal.classList.contains('wechatModal')) {
-                  modal.classList.remove('visible');
-              }
-          };
-      });
-
-      // Optional: Close modal when clicking outside of modal content
-      document.querySelectorAll('.wechatModal').forEach(function(modal) {
-          modal.onclick = function(event) {
-              // Close the modal if the background is clicked, not the content
-              if (event.target === modal) {
-                  modal.classList.remove('visible');
-              }
-          };
-      });
-
-      window.addEventListener('load', function() {
-          // 移除隐藏样式
-          var hideStyle = document.getElementById('initialHideStyle');
-          if (hideStyle) {
-              hideStyle.parentNode.removeChild(hideStyle);
+        // 6. 其他功能初始化
+        const initOtherFeatures = ($grid) => {
+          // URL参数处理
+          const queryString = window.location.search;
+          const urlParams = new URLSearchParams(queryString);
+          const section = urlParams.get('section'); 
+          if (section) {
+            const button = $(`button[data-filter='.${section}']`);
+            if (button.length) button.trigger('click');
           }
-          // 显示内容
+
+          // PDF懒加载
+          $('.load-pdf-button').on('click', function() {
+            const $placeholder = $('.pdf-placeholder');
+            const $pdfContainer = $('.pdfContainer');
+            
+            $placeholder.hide();
+            $pdfContainer.show().attr('src', $pdfContainer.data('src'));
+            
+            $pdfContainer.on('error', function() {
+              $pdfContainer.hide();
+              $('.errorMessage').show();
+            });
+          });
+
+          // ACCEPT点击效果
+          $(document).on('click', function(e) {
+            const $acceptText = $('<div>').addClass('accept-effect')
+              .text('ACCEPT')
+              .css({
+                left: e.pageX + 'px',
+                top: e.pageY + 'px'
+              })
+              .appendTo('body');
+            
+            setTimeout(() => $acceptText.remove(), 1000);
+          });
+
+          // 模态框处理
+          $('.wechatButton').on('click', function(e) {
+            e.preventDefault();
+            $('.wechatModal.visible').removeClass('visible');
+            $(this).find('.wechatModal').addClass('visible');
+          });
+
+          $('.closeModal').on('click', function(e) {
+            e.stopPropagation();
+            $(this).closest('.wechatModal').removeClass('visible');
+          });
+
+          $('.wechatModal').on('click', function(e) {
+            if (e.target === this) {
+              $(this).removeClass('visible');
+            }
+          });
+        };
+
+        // 7. 启动应用
+        initApp();
+
+      });
+
+      // 9. 防止白屏的终极保障
+      setTimeout(() => {
+        if (document.body.style.visibility !== 'visible') {
           document.body.style.visibility = 'visible';
-      });
-
+          $('.experience').css('display', 'block');
+        }
+      }, 3000);
     </script>
-
-
-    
   </body>
 </html>
