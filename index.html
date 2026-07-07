@@ -113,7 +113,7 @@
 
       <div id="filters" class="button-group">
         <button class="button is-checked" id="experienceButton" data-filter=".experience"><span>Experience</span></button>
-        <!-- <button class="button" id="talkButton" data-filter=".talk"><span>Talks</span></button> -->
+        <button class="button" id="academicButton" data-filter=".academic"><span>Academic Activities</span></button>
         <button class="button" id="researchButton" data-filter=".publication"><span>Publications</span></button>
         <button class="button" data-filter=".project"><span>Projects</span></button>
         <button class="button" data-filter=".cv"><span>CV</span></button>
@@ -124,7 +124,7 @@
         <div class="list-item experience" data-category="experience">
 
           <!-- 新增的第一个block -->
-          <p>
+          <!-- <p>
             <img src="https://ik.imagekit.io/xxyvnpkee/noah.png?updatedAt=1762267160843" 
               style="float: right; margin-right: 20px; ; width: 280px; height: 70px;">
           </p>
@@ -137,12 +137,9 @@
               <autocolor>Research Topic: Large Scale VLN Model</autocolor>
             </li>
             <div style="height: 20px;"></div>
-            <!-- <li>
-              <autocolor>Supervisor: <a target="_blank" href="https://people.iiis.tsinghua.edu.cn/~gaoyang/yang-gao.weebly.com/index.html">Prof. Yang Gao</a></autocolor>
-            </li> -->
           </ul>     
   
-          <div style="height: 80px;"></div>
+          <div style="height: 80px;"></div> -->
 
           <!-- 原有的第一个block -->
           <p>
@@ -190,23 +187,29 @@
           
         </div>
 
-        <!-- Talks -->
-        <!-- <div class="list-item talk" data-category="talk">
-          <p>
-            <img src="https://ik.imagekit.io/xxyvnpkee/cohere_lab.png?updatedAt=1755411231136" 
-              style="float: right; margin-right: 20px; ; width: 360px; height: 96px;">
-          </p>
-          <ul style="margin:0 0 20px;list-style-type:none;">
-            <li>
-              <autocolor>Invited Guest Speaker @ <a target="_blank" href="https://cohere.com/research">Cohere Labs Community</a> </autocolor>
-            </li>
-            <div style="height: 20px;"></div>
-            <li>
-              <autocolor>Topic: <a target="_blank" href=""> Why offline meta reinforcement learning ? </a></autocolor>
-            </li>
-          </ul>     
-          
-        </div> -->
+        <!-- Academic Activities -->
+        <div class="list-item academic" data-category="academic">
+          <div class="academic-entry">
+            <div class="academic-text">
+              <div class="academic-title">Program Chair @ <a target="_blank" href="https://opendrivelab.com/rss2026/workshop#schedule">RSS 2026 ExWBC Workshop</a></div>
+              <div class="academic-meta"><u>Hai Zhang</u>, Huijie Wang, Lucy Xiaoyang Shi, Chonghao Sima, Yasemin Bekiroğlu, Hongyang Li</div>
+            </div>
+            <a class="academic-media academic-media-large" target="_blank" href="https://opendrivelab.com/rss2026/workshop#schedule">
+              <img src="https://ik.imagekit.io/xxyvnpkee/rss2026_exwbc_workshop_poster.png" alt="RSS 2026 ExWBC Workshop Poster">
+            </a>
+          </div>
+
+          <div class="academic-entry">
+            <div class="academic-text">
+              <div class="academic-title">Invited Speaker @ <a target="_blank" href="https://lumina-embodied.ai/">Lumina Community</a></div>
+              <div class="academic-meta">Topic: Sparse Video Generation Propels Real-World Beyond-the-View Vision-Language Navigation</div>
+            </div>
+            <a class="academic-media academic-media-small" target="_blank" href="https://lumina-embodied.ai/">
+              <img src="https://ik.imagekit.io/xxyvnpkee/lumina_talk.png" alt="SparseVideoNav Lumina Talk Poster">
+            </a>
+          </div>
+
+        </div>
 
         <!-- Publications -->
         <div class="list-item publication" data-category="publication">
@@ -230,7 +233,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="files/RETRO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" data-src="files/RETRO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -261,7 +264,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="files/RETRO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" data-src="files/RETRO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -291,7 +294,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="files/RETRO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" data-src="files/RETRO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -322,7 +325,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="files/RETRO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" data-src="files/RETRO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -352,7 +355,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="files/RETRO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" data-src="files/RETRO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -384,7 +387,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="https://ik.imagekit.io/xxyvnpkee/CORL_2025_KineDex_Poster.pdf?updatedAt=1759478415435#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" data-src="https://ik.imagekit.io/xxyvnpkee/CORL_2025_KineDex_Poster.pdf?updatedAt=1759478415435#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -413,7 +416,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="files/RETRO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" data-src="files/RETRO_Poster.pdf#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -440,7 +443,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="https://ik.imagekit.io/xxyvnpkee/RETRO_Poster.pdf?updatedAt=1755411081697#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" data-src="https://ik.imagekit.io/xxyvnpkee/RETRO_Poster.pdf?updatedAt=1755411081697#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -468,7 +471,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="https://ik.imagekit.io/xxyvnpkee/unicorn_Poster.pdf?updatedAt=1755411078789#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" data-src="https://ik.imagekit.io/xxyvnpkee/unicorn_Poster.pdf?updatedAt=1755411078789#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -495,7 +498,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="https://ik.imagekit.io/xxyvnpkee/SMG_Poster.pdf?updatedAt=1755411079318#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" data-src="https://ik.imagekit.io/xxyvnpkee/SMG_Poster.pdf?updatedAt=1755411079318#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -521,7 +524,7 @@
                   <div class="wechatModal">
                     <div class="modal-content">
                         <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
-                        <iframe class="pdfContainer" src="https://ik.imagekit.io/xxyvnpkee/USB_PO_Poster.pdf?updatedAt=1755411081171#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <iframe class="pdfContainer" data-src="https://ik.imagekit.io/xxyvnpkee/USB_PO_Poster.pdf?updatedAt=1755411081171#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
                         <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
@@ -546,10 +549,9 @@
                   <a target="_blank" href="" class="noNavigateLink">Poster</a>
                   <div class="wechatModal">
                     <div class="modal-content">
-                        <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;
-                          <iframe class="pdfContainer" src="https://ik.imagekit.io/xxyvnpkee/saferl_icra_poster.pdf?updatedAt=1755411078137#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
-                          <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
-                        </span>
+                        <span class="closeModal" style="cursor: pointer; float: left; font-size: 20px;">&times;</span>
+                        <iframe class="pdfContainer" data-src="https://ik.imagekit.io/xxyvnpkee/saferl_icra_poster.pdf?updatedAt=1755411078137#toolbar=0" type="application/pdf" width="1000" height="600" style="border:none;"></iframe>
+                        <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
                     </div>
                   </div>
                   </button>
@@ -617,7 +619,7 @@
 
         <!-- CV -->
         <div class="list-item cv" data-category="cv">
-          <iframe class="pdfContainer" src="https://ik.imagekit.io/xxyvnpkee/Resume.pdf#toolbar=0" width="900" height="1170" style="border:none;"></iframe>
+          <iframe class="pdfContainer" data-src="https://ik.imagekit.io/xxyvnpkee/Resume.pdf?updatedAt=1783444499718#toolbar=0" width="900" height="1170" style="border:none;"></iframe>
           <div class="errorMessage">Unable to display the PDF. Please try again later.</div>
         </div>
 
@@ -647,10 +649,17 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function() {
-              // 1. 立即显示页面内容
+        // 1. 立即显示页面内容
         document.body.style.visibility = 'visible';
         document.body.style.opacity = '1';
         document.getElementById('main').style.display = 'block';
+
+        const loadPdf = ($pdfContainer) => {
+          const pdfSrc = $pdfContainer.data('src');
+          if (pdfSrc && !$pdfContainer.attr('src')) {
+            $pdfContainer.attr('src', pdfSrc);
+          }
+        };
 
         // 2. 初始化Isotope
         const initIsotope = () => {
@@ -674,6 +683,10 @@
             // 更新按钮状态
             $('.button-group .button').removeClass('is-checked');
             $(this).addClass('is-checked');
+
+            if (filterValue === '.cv') {
+              loadPdf($('.cv .pdfContainer'));
+            }
           });
 
           return $grid;
@@ -706,18 +719,9 @@
             if (button.length) button.trigger('click');
           }
 
-          // PDF懒加载
-          $('.load-pdf-button').on('click', function() {
-            const $placeholder = $('.pdf-placeholder');
-            const $pdfContainer = $('.pdfContainer');
-            
-            $placeholder.hide();
-            $pdfContainer.show().attr('src', $pdfContainer.data('src'));
-            
-            $pdfContainer.on('error', function() {
-              $pdfContainer.hide();
-              $('.errorMessage').show();
-            });
+          $('.pdfContainer').on('error', function() {
+            $(this).hide();
+            $(this).siblings('.errorMessage').show();
           });
 
           // ACCEPT点击效果
@@ -737,7 +741,9 @@
           $('.wechatButton').on('click', function(e) {
             e.preventDefault();
             $('.wechatModal.visible').removeClass('visible');
-            $(this).find('.wechatModal').addClass('visible');
+            const $modal = $(this).find('.wechatModal');
+            loadPdf($modal.find('.pdfContainer'));
+            $modal.addClass('visible');
           });
 
           $('.closeModal').on('click', function(e) {

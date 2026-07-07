@@ -299,6 +299,61 @@ h3 a:hover {
   color: #a0a8b0;
 }
 
+.academic {
+  margin-bottom: 0.5em;
+}
+
+.academic-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 2.5em;
+  align-items: start;
+  min-height: 17em;
+  margin-bottom: 2.2em;
+}
+
+.academic-text {
+  max-width: 27em;
+}
+
+.academic-title {
+  font-size: 1.05em;
+  line-height: 1.35em;
+  color: #150c21;
+}
+
+.academic-meta {
+  margin-top: 1.2em;
+  font-size: 1em;
+  line-height: 1.35em;
+  color: #a0a8b0;
+}
+
+.academic-media {
+  display: block;
+  justify-self: end;
+  border-bottom: none;
+}
+
+.academic-media:hover {
+  border-bottom: none;
+}
+
+.academic-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.academic-media-large {
+  width: 26em;
+}
+
+.academic-media-small {
+  width: 18em;
+}
+
 .project {
   margin-bottom: 0.5em;
 }
