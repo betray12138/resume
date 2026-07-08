@@ -112,9 +112,9 @@
       </div>
 
       <div id="filters" class="button-group">
-        <button class="button is-checked" id="experienceButton" data-filter=".experience"><span>Experience</span></button>
-        <button class="button" id="academicButton" data-filter=".academic"><span>Academic Activities</span></button>
+        <button class="button is-checked" id="academicButton" data-filter=".academic"><span>Academic Activities</span></button>
         <button class="button" id="researchButton" data-filter=".publication"><span>Publications</span></button>
+        <button class="button" id="experienceButton" data-filter=".experience"><span>Experience</span></button>
         <button class="button" data-filter=".project"><span>Projects</span></button>
         <button class="button" data-filter=".cv"><span>CV</span></button>
       </div>
@@ -669,7 +669,7 @@
           const $grid = $('.grid').isotope({
             itemSelector: '.list-item',
             layoutMode: 'fitRows',
-            filter: '.experience', // 默认显示Experience
+            filter: '.academic', // 默认显示Academic Activities
             initLayout: true,
             hiddenStyle: { opacity: 0, display: 'none' },  // 明确设置隐藏样式
             visibleStyle: { opacity: 1, display: 'block' }  // 明确设置显示样式
@@ -697,9 +697,9 @@
           if (window.jQuery && window.Isotope) {
             const $grid = initIsotope();
             
-            // 初始显示Experience
-            $grid.isotope({ filter: '.experience' });
-            $('#experienceButton').addClass('is-checked');
+            // 初始显示Academic Activities
+            $grid.isotope({ filter: '.academic' });
+            $('#academicButton').addClass('is-checked');
 
             // 初始化其他功能
             initOtherFeatures($grid);
@@ -767,7 +767,7 @@
       setTimeout(() => {
         if (document.body.style.visibility !== 'visible') {
           document.body.style.visibility = 'visible';
-          $('.experience').css('display', 'block');
+          $('.academic').css('display', 'block');
         }
       }, 3000);
     </script>
