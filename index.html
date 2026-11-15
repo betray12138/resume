@@ -72,6 +72,106 @@
       .grid .list-item.isotope-item {
         display: block;
       }
+
+      /* HKU Centennial Campus wall, softly blurred across the full intro row. */
+      #intro {
+        position: relative;
+        isolation: isolate;
+        display: flow-root;
+        overflow: visible;
+        box-sizing: border-box;
+        width: 100%;
+      }
+      #intro::before {
+        position: absolute;
+        z-index: -2;
+        top: -8px;
+        bottom: -8px;
+        left: 50%;
+        width: 100vw;
+        content: "";
+        background: url("https://ik.imagekit.io/xxyvnpkee/hku.png") center 62% / cover no-repeat;
+        filter: blur(2.5px) saturate(0.9);
+        transform: translateX(-50%);
+      }
+      #intro::after {
+        position: absolute;
+        z-index: -1;
+        top: -8px;
+        bottom: -8px;
+        left: 50%;
+        width: 100vw;
+        content: "";
+        background: rgba(255, 255, 255, 0.71);
+        transform: translateX(-50%);
+      }
+
+      /* Compact video highlights inspired by the reference motion strip. */
+      .demo-showcase {
+        margin: 1em 0 1.5em;
+      }
+      .demo-showcase-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.55em;
+      }
+      .demo-showcase-card {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 1.62 / 1;
+        border-radius: 7px;
+        background: #111;
+        box-shadow: 0 5px 14px rgba(21, 12, 33, 0.09);
+      }
+      .demo-showcase-card > a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .demo-showcase-card > a:hover {
+        border-bottom: none;
+      }
+      .demo-showcase-media {
+        width: 100%;
+        height: 100%;
+      }
+      .demo-showcase-media video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .demo-showcase-card.preserve-frame video {
+        object-fit: contain;
+      }
+      .demo-showcase-label {
+        position: absolute;
+        right: 0.3em;
+        bottom: 0.14em;
+        padding: 0.08em 0.42em;
+        border-radius: 4px;
+        color: #fff;
+        background: rgba(16, 18, 22, 0.72);
+        font-size: 0.58em;
+        font-weight: 700;
+        line-height: 1.25;
+        letter-spacing: 0.02em;
+      }
+      .publication-other {
+        display: none !important;
+      }
+      .publication-list-link h3 a {
+        color: rgb(20, 110, 190);
+      }
+      .list-item.publication::after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      @media (max-width: 760px) {
+        .demo-showcase-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
     </style>
   </head>
 
@@ -89,13 +189,11 @@
             I'm a second-year PhD student at <a target="_blank" href="https://mmlab.hk/">The Multimedia Laboratory (MMLab)</a> of <a target="_blank" href="https://www.hku.hk/">The University of Hong Kong</a>, jointly supervised by <a target="_blank" href="https://lihongyang.info/">Prof. Hongyang Li</a> and <a target="_blank" href="https://repository.hku.hk/cris/rp/rp02460">Prof. Fu Zhang</a>.
             I also serve as the head TA for the newly launched undergraduate course <a target="_blank" href="https://mmlab.hk/CCAI9025">CCAI9025</a> and get <a target="_blank" href="https://commoncore.hku.hk/2026/07/27/tutor-innovation-awards/">HKU CCTIA Award</a> as the only student recipient.
             <br>
-            Prior to this, I earned both my Master's and Bachelor's degrees in Computer Science and Technology from <a target="_blank" href="https://cs.tongji.edu.cn/index.htm">Tongji University</a>, where I had the privilege of being supervised by <a target="_blank" href="http://cs1.tongji.edu.cn/~junqiao/">Prof. Junqiao Zhao</a>.
+            Prior to this, I received my Master's and Bachelor's degrees in Computer Science from <a target="_blank" href="https://cs.tongji.edu.cn/index.htm">Tongji University</a>, where I was honored to be advised by <a target="_blank" href="http://cs1.tongji.edu.cn/~junqiao/">Prof. Junqiao Zhao</a>.
             <br>
-            My research interests focus on world model in reinforcement learning and general embodied intelligence 🤖.
-            I firmly believe that the prior of pretraining in world modeling holds significant promise as a pivotal pathway toward achieving Artificial General Intelligence!
+            My research lies at the intersection of world models, reinforcement learning, and embodied agents 🤖, with the long-term goal of building robust, generalizable, and deployable policies in the real world!
             <br>
-            Previously, I was fortunate to collaborate with <a target="_blank" href="https://lanqingli1993.github.io/">Prof. Lanqing Li</a> and <a target="_blank" href="https://www.cse.cuhk.edu.hk/~pheng/">Prof. Pheng Ann Heng</a> at The Chinese University of Hong Kong.
-            Currently, I'm working closely with <a target="_blank" href="https://people.iiis.tsinghua.edu.cn/~gaoyang/yang-gao.weebly.com/index.html">Prof. Yang Gao</a> at Tsinghua University to explore the generalization ability towards general robotic manipulation.
+            Previously, I was fortunate to collaborate with <a target="_blank" href="https://www.cse.cuhk.edu.hk/~pheng/">Prof. Pheng Ann Heng</a> and <a target="_blank" href="https://people.iiis.tsinghua.edu.cn/~gaoyang/yang-gao.weebly.com/index.html">Prof. Yang Gao</a> to explore model generalization.
             <br>
             I'm always open to collaborations! Feel free to reach out —— I'd love to connect!👋. 
             <br><br>
@@ -109,12 +207,59 @@
           <br><br>
           </p>
         </div>
-
       </div>
+
+      <section class="demo-showcase" aria-label="Research demos">
+        <div class="demo-showcase-grid">
+          <article class="demo-showcase-card">
+            <a target="_blank" rel="noopener noreferrer" href="https://www.archon.tech/research/compass1">
+              <div class="demo-showcase-media">
+                <video autoplay muted loop playsinline preload="metadata" poster="https://ik.imagekit.io/xxyvnpkee/web_assets/demos/compass1-poster.jpg" aria-label="Compass 1 navigation demo">
+                  <source src="https://ik.imagekit.io/xxyvnpkee/web_assets/demos/compass1.mp4" type="video/mp4">
+                </video>
+              </div>
+              <span class="demo-showcase-label">Compass 1</span>
+            </a>
+          </article>
+
+          <article class="demo-showcase-card preserve-frame">
+            <a target="_blank" rel="noopener noreferrer" href="https://opendrivelab.com/SparseVideoNav/">
+              <div class="demo-showcase-media">
+                <video autoplay muted loop playsinline preload="metadata" poster="https://ik.imagekit.io/xxyvnpkee/web_assets/demos/sparsevideonav-poster.jpg" aria-label="SparseVideoNav navigation demo">
+                  <source src="https://ik.imagekit.io/xxyvnpkee/web_assets/demos/sparsevideonav.mp4" type="video/mp4">
+                </video>
+              </div>
+              <span class="demo-showcase-label">SparseVideoNav</span>
+            </a>
+          </article>
+
+          <article class="demo-showcase-card preserve-frame">
+            <a target="_blank" rel="noopener noreferrer" href="https://mmlab.hk/research/kai0">
+              <div class="demo-showcase-media">
+                <video autoplay muted loop playsinline preload="metadata" poster="https://ik.imagekit.io/xxyvnpkee/web_assets/demos/kai0-poster.jpg" aria-label="Chi zero garment manipulation demo">
+                  <source src="https://ik.imagekit.io/xxyvnpkee/web_assets/demos/kai0.mp4" type="video/mp4">
+                </video>
+              </div>
+              <span class="demo-showcase-label">χ0</span>
+            </a>
+          </article>
+
+          <article class="demo-showcase-card">
+            <a target="_blank" rel="noopener noreferrer" href="https://dinomini00.github.io/KineDex/">
+              <div class="demo-showcase-media">
+                <video autoplay muted loop playsinline preload="metadata" poster="https://ik.imagekit.io/xxyvnpkee/web_assets/demos/kinedex-poster.jpg" aria-label="KineDex dexterous manipulation demo">
+                  <source src="https://ik.imagekit.io/xxyvnpkee/web_assets/demos/kinedex.mp4" type="video/mp4">
+                </video>
+              </div>
+              <span class="demo-showcase-label">KineDex</span>
+            </a>
+          </article>
+        </div>
+      </section>
 
       <div id="filters" class="button-group">
         <button class="button is-checked" id="academicButton" data-filter=".academic"><span>Academic Activities</span></button>
-        <button class="button" id="researchButton" data-filter=".publication"><span>Publications</span></button>
+        <button class="button" id="researchButton" data-filter=".publication"><span>Selected Publication</span></button>
         <button class="button" id="experienceButton" data-filter=".experience"><span>Experience</span></button>
         <button class="button" data-filter=".project"><span>Projects</span></button>
         <button class="button" data-filter=".cv"><span>CV</span></button>
@@ -151,7 +296,7 @@
           </p>
           <ul style="margin:0 0 20px;list-style-type:none;">
             <li>
-              <autocolor>Time: 2024.06~current</autocolor>
+              <autocolor>Time: 2024.06~2025.06</autocolor>
             </li>
             <div style="height: 20px;"></div>
             <li>
@@ -213,6 +358,13 @@
         </div>
 
         <!-- Publications -->
+        <div class="list-item publication publication-list-link" data-category="publication">
+          <h3>
+            For the complete publication list, please visit my
+            <a target="_blank" rel="noopener noreferrer" href="https://scholar.google.com/citations?user=YHqAzxUAAAAJ&amp;hl=en">Google Scholar profile</a>.
+          </h3>
+        </div>
+
         <div class="list-item publication" data-category="publication">
           <a target="_blank" href="https://arxiv.org/pdf/2611.12087" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/compass1.png" alt="" /></a>
           <div class="project-description">
@@ -284,7 +436,7 @@
             <h3><a target="_blank" href="https://arxiv.org/abs/2602.09021">χ0: Resource-Aware Robust Manipulation via Taming Distributional Inconsistencies</a></h3>
             <p>
                 Checheng Yu, Chonghao Sima, Gangcheng Jiang, <u>Hai Zhang</u>, Haoguang Mai, Hongyang Li†, Huijie Wang, Jin Chen, Kaiyang Wu, Li Chen, Lirui Zhao, Modi Shi, Ping Luo, Qingwen Bu, Shijia Peng, Tianyu Li, Yibo Yuan
-                <br><i>Under Review</i><br>
+                <br><i>Technical Report</i><br>
               
                 <font color="769fcd"> <i class="fa-solid fa-magnifying-glass"></i> TL;DR:
                    χ0 enables two sets of dual-arm robots to collaboratively orchestrate long-horizon garment manipulation, spanning tasks from flattening, folding, to hanging different clothes. 
@@ -308,7 +460,7 @@
           </div>
         </div>
 
-        <div class="list-item publication" data-category="publication">
+        <div class="list-item publication publication-other" data-category="publication">
           <a target="_blank" href="https://arxiv.org/abs/2601.22988" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/gen3d.png" alt="" /></a>
           <div class="project-description">
             <h3><a target="_blank" href="https://arxiv.org/abs/2601.22988">Learning Geometrically-Grounded 3D Visual Representations for View-Generalizable Robotic Manipulation</a></h3>
@@ -338,7 +490,7 @@
           </div>
         </div>
 
-        <div class="list-item publication" data-category="publication">
+        <div class="list-item publication publication-other" data-category="publication">
           <a target="_blank" href="https://arxiv.org/abs/2511.23442" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/astro.png?updatedAt=1755415475329" alt="" /></a>
           <div class="project-description">
             <h3><a target="_blank" href="https://arxiv.org/abs/2511.23442">ASTRO: Adaptive Stitching via Dynamics-Guided Trajectory Rollouts</a></h3>
@@ -369,7 +521,7 @@
           </div>
         </div>
 
-        <div class="list-item publication" data-category="publication">
+        <div class="list-item publication publication-other" data-category="publication">
           <a target="_blank" href="https://arxiv.org/abs/2405.08036" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/screenshot-20260122-181323.png" alt="" /></a>
           <div class="project-description">
             <h3><a target="_blank" href="https://arxiv.org/abs/2405.08036">Potentially Optimal Joint Actions Recognition for Cooperative Multi-Agent Reinforcement Learning</a></h3>
@@ -431,7 +583,7 @@
             </p>
           </div>
         </div>
-        <div class="list-item publication" data-category="publication">
+        <div class="list-item publication publication-other" data-category="publication">
           <a target="_blank" href="https://openreview.net/forum?id=cx9AnB8rzi&noteId=XBCOd75R18" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/certain.png?updatedAt=1755411231355" alt="" /></a>
           <div class="project-description">
             <h3><a target="_blank" href="https://openreview.net/forum?id=cx9AnB8rzi&noteId=XBCOd75R18">CERTAIN: Context Uncertainty-aware One-Shot Adaptation for Context-based Offline Meta Reinforcement Learning</a></h3>
@@ -514,7 +666,7 @@
             </p>
           </div>
         </div>
-        <div class="list-item publication" data-category="publication">
+        <div class="list-item publication publication-other" data-category="publication">
           <a target="_blank" href="https://arxiv.org/abs/2410.10834" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/SMG.png?updatedAt=1755411236287" alt="" /></a>
           <div class="project-description">
             <h3><a target="_blank" href="https://arxiv.org/abs/2410.10834">Focus On What Matters: Separated Models For Visual-Based RL Generalization</a></h3>
@@ -566,7 +718,7 @@
             </p>
           </div>
         </div>
-        <div class="list-item publication" data-category="publication">
+        <div class="list-item publication publication-other" data-category="publication">
           <a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10319093" class="thumbnail"><img src="https://ik.imagekit.io/xxyvnpkee/saferl.png?updatedAt=1755411235443" alt="" /></a>
           <div class="project-description">
             <h3><a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/10319093">Safe Reinforcement Learning with Dead-Ends Avoidance and Recovery</a></h3>
@@ -687,6 +839,10 @@
         document.body.style.visibility = 'visible';
         document.body.style.opacity = '1';
         document.getElementById('main').style.display = 'block';
+
+        // Keep the publication tab focused on first/co-first-author work and
+        // the two selected major collaborations.
+        document.querySelectorAll('.publication-other').forEach((item) => item.remove());
 
         const loadPdf = ($pdfContainer) => {
           const pdfSrc = $pdfContainer.data('src');
